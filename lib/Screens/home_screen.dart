@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'program_lists_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Home"), centerTitle: true),
+      appBar: AppBar(title: const Text("Excelerate"), centerTitle: true),
 
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -19,15 +20,15 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(border: Border.all()),
               child: const Text(
-                "Welcome Announcement",
+                "Welcome to Excelerate",
                 textAlign: TextAlign.center,
               ),
             ),
 
-            const SizedBox(height: 15),
+            const SizedBox(height: 20),
 
             Container(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(border: Border.all()),
               child: const Text("Programs", textAlign: TextAlign.center),
             ),
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 15),
 
             Container(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(border: Border.all()),
               child: const Text("Announcements", textAlign: TextAlign.center),
             ),
@@ -43,9 +44,33 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 15),
 
             Container(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(border: Border.all()),
               child: const Text("Quick Links", textAlign: TextAlign.center),
+            ),
+
+            const Spacer(),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+              children: [
+                ElevatedButton(onPressed: () {}, child: const Text("Home")),
+
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ProgramListingScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text("Programs"),
+                ),
+
+                ElevatedButton(onPressed: () {}, child: const Text("Profile")),
+              ],
             ),
           ],
         ),
