@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'program_details_screen.dart';
 
 class ProgramListingScreen extends StatelessWidget {
   const ProgramListingScreen({super.key});
@@ -13,13 +14,24 @@ class ProgramListingScreen extends StatelessWidget {
 
         child: Column(
           children: [
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(border: Border.all()),
-              child: const Text(
-                "Digital Marketing Bootcamp",
-                textAlign: TextAlign.center,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProgramDetailsScreen(),
+                  ),
+                );
+              },
+
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(border: Border.all()),
+                child: const Text(
+                  "Digital Marketing Bootcamp",
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
 
