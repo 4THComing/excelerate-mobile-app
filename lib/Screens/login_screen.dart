@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -13,7 +14,9 @@ class LoginScreen extends StatelessWidget {
 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
+            // Logo Placeholder
             Container(
               width: 80,
               height: 50,
@@ -23,6 +26,7 @@ class LoginScreen extends StatelessWidget {
 
             const SizedBox(height: 25),
 
+            // Email Field
             TextField(
               decoration: const InputDecoration(
                 hintText: "Email",
@@ -32,6 +36,7 @@ class LoginScreen extends StatelessWidget {
 
             const SizedBox(height: 15),
 
+            // Password Field
             TextField(
               obscureText: true,
               decoration: const InputDecoration(
@@ -42,10 +47,20 @@ class LoginScreen extends StatelessWidget {
 
             const SizedBox(height: 15),
 
-            ElevatedButton(onPressed: () {}, child: const Text("Login")),
+            // Login Button
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
+              },
+              child: const Text("Login"),
+            ),
 
             const SizedBox(height: 15),
 
+            // Forgot Password Button
             ElevatedButton(
               onPressed: () {},
               child: const Text("Forgot Password"),
@@ -55,6 +70,7 @@ class LoginScreen extends StatelessWidget {
 
             const Text("Don't have an account?"),
 
+            // Register Button
             TextButton(onPressed: () {}, child: const Text("Register")),
           ],
         ),
