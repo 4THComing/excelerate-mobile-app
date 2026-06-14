@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'program_details_screen.dart';
 
-class ProgramListingScreen extends StatelessWidget {
-  const ProgramListingScreen({super.key});
+class ProgramListsScreen extends StatelessWidget {
+  const ProgramListsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
