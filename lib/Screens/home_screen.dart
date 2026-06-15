@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'program_lists_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -59,12 +58,7 @@ class HomeScreen extends StatelessWidget {
 
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ProgramListsScreen(),
-                      ),
-                    );
+                    Navigator.pushNamed(context, '/programs');
                   },
                   child: const Text("Programs"),
                 ),

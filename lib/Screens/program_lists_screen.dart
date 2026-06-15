@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'program_details_screen.dart';
 
 class ProgramListsScreen extends StatelessWidget {
   const ProgramListsScreen({super.key});
@@ -16,12 +15,7 @@ class ProgramListsScreen extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ProgramDetailsScreen(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/details');
               },
 
               child: Container(
