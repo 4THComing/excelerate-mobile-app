@@ -72,15 +72,15 @@ Program Details Screen
 
 ### Home Screen
 
-![Home Screen](docs/images/home-screen.png)
+![Home Screen](docs/images/Home-Screen.png)
 
-### Program Listing Screen
+### Program Lists Screen
 
-![Program Listing Screen](docs/images/program-lists-screen.png)
+![Program Lists Screen](docs/images/Program-lists-Screen.png)
 
 ### Program Details Screen
 
-![Program Details Screen](docs/images/program-details-screen.png)
+![Program Details Screen](docs/images/Program-Details-Screen.png)
 
 ## Learning Outcomes
 
