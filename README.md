@@ -68,7 +68,7 @@ Program Details Screen
 
 ### Login Screen
 
-![Login Screen](docs/images/login-screen.png)
+![Login Screen](docs/images/Login-Screen.png)
 
 ### Home Screen
 
@@ -76,7 +76,7 @@ Program Details Screen
 
 ### Program Lists Screen
 
-![Program Lists Screen](docs/images/Program-lists-Screen.png)
+![Program Lists Screen](docs/images/Program-Lists-Screen.png)
 
 ### Program Details Screen
 
