@@ -74,13 +74,33 @@ Program Details Screen
 
 ![Home Screen](docs/images/Home-Screen.png)
 
+## Home Screen Refracted
+
+![Home Screen Refracted](docs/images/Refractored%20Home%20Screen.png)
+
 ### Program Lists Screen
 
 ![Program Lists Screen](docs/images/Program-Lists-Screen.png)
 
+## Program Lists Screen Refracted
+
+![Program Lists Screen Refracted](docs/images/Refractored%20Program%20Listings.png)
+
 ### Program Details Screen
 
 ![Program Details Screen](docs/images/Program-Details-Screen.png)
+
+## Program Details Screen Refracted
+
+![Program Details Screen Refracted](docs/images/Refractored%20Program%20Details%20Screen.png)
+
+## Profile Screen
+
+![Profile Screen](docs/images/Refractored%20Profile%20Screen.png)
+
+## Feedback Screen
+
+![Feedback Screen](docs/images/Refractored%20Feedback%20screen.png)
 
 ## Learning Outcomes
 
