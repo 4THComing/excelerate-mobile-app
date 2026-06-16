@@ -12,44 +12,111 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
 
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-
           children: [
+            // Logo + Profile
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+              children: [
+                Container(
+                  width: 100,
+                  height: 50,
+                  decoration: BoxDecoration(border: Border.all()),
+                  child: const Center(child: Text("Logo")),
+                ),
+
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  child: const Text("Profile"),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 25),
+
+            // Announcements Header
             Container(
+              width: double.infinity,
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(border: Border.all()),
               child: const Text(
-                "Welcome to Excelerate",
+                "Announcements",
                 textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
               ),
             ),
 
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
 
+            // Announcement 1
             Container(
-              padding: const EdgeInsets.all(20),
+              width: double.infinity,
+              padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(border: Border.all()),
-              child: const Text("Programs", textAlign: TextAlign.center),
+              child: const Text("Workshop This Friday"),
+            ),
+
+            const SizedBox(height: 10),
+
+            // Announcement 2
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(border: Border.all()),
+              child: const Text("New Program Available"),
+            ),
+
+            const SizedBox(height: 25),
+
+            // Featured Programs Header
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(border: Border.all()),
+              child: const Text(
+                "Featured Programs",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20),
+              ),
             ),
 
             const SizedBox(height: 15),
 
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(border: Border.all()),
-              child: const Text("Announcements", textAlign: TextAlign.center),
+            // Program Card 1
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/details');
+              },
+
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(border: Border.all()),
+                child: const Text("Program Card"),
+              ),
             ),
 
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
 
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(border: Border.all()),
-              child: const Text("Quick Links", textAlign: TextAlign.center),
+            // Program Card 2
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/details');
+              },
+
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(border: Border.all()),
+                child: const Text("Program Card"),
+              ),
             ),
 
             const Spacer(),
 
+            // Bottom Navigation
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
@@ -65,9 +132,9 @@ class HomeScreen extends StatelessWidget {
 
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/profile');
+                    Navigator.pushNamed(context, '/feedback');
                   },
-                  child: const Text("Profile"),
+                  child: const Text("Feedback"),
                 ),
               ],
             ),
