@@ -6,70 +6,128 @@ class FeedbackScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Feedback")),
+      appBar: AppBar(title: const Text("Feedback"), centerTitle: true),
 
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
 
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-
-          children: [
-            const Text(
-              "Feedback",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-
-            const SizedBox(height: 20),
-
-            const Text("We value your feedback."),
-
-            const SizedBox(height: 15),
-
-            TextField(
-              maxLines: 5,
-              decoration: const InputDecoration(
-                hintText: "Enter your feedback here...",
-                border: OutlineInputBorder(),
+          child: Column(
+            children: [
+              // Header
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(border: Border.all()),
+                child: const Text(
+                  "Feedback",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
 
-            const SizedBox(height: 20),
+              const SizedBox(height: 25),
 
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text("Submit Feedback"),
-            ),
+              // Program Label
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(border: Border.all()),
+                child: const Text("Program", style: TextStyle(fontSize: 18)),
+              ),
 
-            const Spacer(),
+              const SizedBox(height: 15),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // Dropdown
+              DropdownButtonFormField<String>(
+                decoration: const InputDecoration(border: OutlineInputBorder()),
+                hint: const Text("Select Program"),
+                items: const [
+                  DropdownMenuItem(
+                    value: "Program 1",
+                    child: Text("Program 1"),
+                  ),
+                  DropdownMenuItem(
+                    value: "Program 2",
+                    child: Text("Program 2"),
+                  ),
+                  DropdownMenuItem(
+                    value: "Program 3",
+                    child: Text("Program 3"),
+                  ),
+                ],
+                onChanged: (value) {},
+              ),
 
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/home');
-                  },
-                  child: const Text("Home"),
+              const SizedBox(height: 20),
+
+              // Rating Header
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(border: Border.all()),
+                child: const Text(
+                  "Rating",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 18),
                 ),
+              ),
 
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/programs');
-                  },
-                  child: const Text("Programs"),
-                ),
+              const SizedBox(height: 15),
 
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/profile');
-                  },
-                  child: const Text("Profile"),
+              // Rating Buttons
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  CircleAvatar(child: Text("1")),
+                  CircleAvatar(child: Text("2")),
+                  CircleAvatar(child: Text("3")),
+                  CircleAvatar(child: Text("4")),
+                  CircleAvatar(child: Text("5")),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+
+              // Comments Box
+              TextField(
+                maxLines: 6,
+                decoration: const InputDecoration(
+                  hintText: "Comments",
+                  border: OutlineInputBorder(),
                 ),
-              ],
-            ),
-          ],
+              ),
+
+              const SizedBox(height: 30),
+
+              // Navigation
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/home');
+                    },
+                    child: const Text("Home"),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/programs');
+                    },
+                    child: const Text("Programs"),
+                  ),
+
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text("Feedback"),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );
