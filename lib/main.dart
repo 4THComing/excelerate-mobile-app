@@ -5,6 +5,7 @@ import 'Screens/home_screen.dart';
 import 'Screens/program_lists_screen.dart';
 import 'Screens/program_details_screen.dart';
 import 'Screens/profile_screen.dart';
+import 'Screens/feedback_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/programs': (context) => const ProgramListsScreen(),
         '/details': (context) => const ProgramDetailsScreen(),
         '/profile': (context) => const ProfileScreen(),
+        '/feedback': (context) => const FeedbackScreen(),
       },
     );
   }

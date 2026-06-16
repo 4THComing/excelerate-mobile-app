@@ -28,6 +28,15 @@ class ProfileScreen extends StatelessWidget {
 
             const Text("Email: demo@excelerate.com"),
 
+            const SizedBox(height: 10),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/feedback');
+              },
+              child: const Text("Feedback"),
+            ),
+
             const SizedBox(height: 30),
 
             ElevatedButton(onPressed: () {}, child: const Text("Edit Profile")),
