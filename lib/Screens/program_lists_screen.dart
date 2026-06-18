@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ProgramListsScreen extends StatelessWidget {
+import '../Models/program_model.dart';
+import '../Services/program_service.dart';
+
+class ProgramListsScreen extends StatefulWidget {
   const ProgramListsScreen({super.key});
+
+  @override
+  State<ProgramListsScreen> createState() => _ProgramListsScreenState();
+}
+
+class _ProgramListsScreenState extends State<ProgramListsScreen> {
+  final ProgramService programService = ProgramService();
 
   @override
   Widget build(BuildContext context) {
@@ -38,27 +48,39 @@ class ProgramListsScreen extends StatelessWidget {
 
               const SizedBox(height: 30),
 
-              // Horizontal Program Cards
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+              // Dynamic Program Cards
+              FutureBuilder<List<Program>>(
+                future: programService.getPrograms(),
 
-                child: Row(
-                  children: [
-                    buildProgramCard(context),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const CircularProgressIndicator();
+                  }
 
-                    const SizedBox(width: 20),
+                  if (snapshot.hasError) {
+                    return const Text("Unable to load programs");
+                  }
 
-                    buildProgramCard(context),
+                  if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    return const Text("No programs available");
+                  }
 
-                    const SizedBox(width: 20),
+                  final programs = snapshot.data!;
 
-                    buildProgramCard(context),
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
 
-                    const SizedBox(width: 20),
+                    child: Row(
+                      children: programs.map((program) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 20),
 
-                    buildProgramCard(context),
-                  ],
-                ),
+                          child: buildProgramCard(context, program),
+                        );
+                      }).toList(),
+                    ),
+                  );
+                },
               ),
 
               const SizedBox(height: 30),
@@ -95,16 +117,18 @@ class ProgramListsScreen extends StatelessWidget {
     );
   }
 
-  Widget buildProgramCard(BuildContext context) {
+  Widget buildProgramCard(BuildContext context, Program program) {
     return SizedBox(
-      width: 150,
+      width: 180,
 
       child: Column(
         children: [
           Container(
             height: 60,
             decoration: BoxDecoration(border: Border.all()),
-            child: const Center(child: Text("Program 1")),
+            child: Center(
+              child: Text(program.name, textAlign: TextAlign.center),
+            ),
           ),
 
           const SizedBox(height: 10),
@@ -112,8 +136,12 @@ class ProgramListsScreen extends StatelessWidget {
           Container(
             height: 120,
             decoration: BoxDecoration(border: Border.all()),
-            child: const Center(
-              child: Text("Short\nDescription", textAlign: TextAlign.center),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+
+                child: Text(program.description, textAlign: TextAlign.center),
+              ),
             ),
           ),
 
