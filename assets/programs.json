@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Digital Marketing Bootcamp",
+    "description": "Learn SEO, Social Media Marketing and Content Creation.",
+    "date": "01-07-2026",
+    "location": "Online"
+  },
+  {
+    "name": "Web Development Program",
+    "description": "Learn HTML, CSS, JavaScript and Flutter fundamentals.",
+    "date": "15-07-2026",
+    "location": "Online"
+  },
+  {
+    "name": "Data Analytics Program",
+    "description": "Learn Excel, Power BI and Data Visualization.",
+    "date": "01-08-2026",
+    "location": "Hybrid"
+  }
+]
