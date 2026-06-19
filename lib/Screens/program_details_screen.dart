@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import '../Models/program_model.dart';
 
 class ProgramDetailsScreen extends StatelessWidget {
   const ProgramDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final Program program =
+        ModalRoute.of(context)!.settings.arguments as Program;
+
     return Scaffold(
       appBar: AppBar(title: const Text("Program Details"), centerTitle: true),
 
@@ -19,16 +23,19 @@ class ProgramDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(border: Border.all()),
-                child: const Text(
-                  "Digital Marketing Bootcamp",
+                child: Text(
+                  program.name,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
 
               const SizedBox(height: 25),
 
-              // Program Image
+              // Program Image Placeholder
               Container(
                 height: 120,
                 width: 250,
@@ -43,10 +50,7 @@ class ProgramDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(border: Border.all()),
-                child: const Text(
-                  "Learn digital marketing skills including SEO, social media marketing, content creation, and online advertising.",
-                  textAlign: TextAlign.center,
-                ),
+                child: Text(program.description, textAlign: TextAlign.center),
               ),
 
               const SizedBox(height: 20),
@@ -56,9 +60,9 @@ class ProgramDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(border: Border.all()),
-                child: const Text(
-                  "Date : 01-07-2026",
-                  style: TextStyle(fontSize: 18),
+                child: Text(
+                  "Date : ${program.date}",
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
 
@@ -69,9 +73,9 @@ class ProgramDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(border: Border.all()),
-                child: const Text(
-                  "Location : Online",
-                  style: TextStyle(fontSize: 18),
+                child: Text(
+                  "Location : ${program.location}",
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
 

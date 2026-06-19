@@ -152,7 +152,7 @@ class _ProgramListsScreenState extends State<ProgramListsScreen> {
 
             child: ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/details');
+                Navigator.pushNamed(context, '/details', arguments: program);
               },
               child: const Text("View Details"),
             ),
